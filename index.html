@@ -204,64 +204,65 @@
     .project-preview {
       flex: 1;
       min-width: 0;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16162a 100%);
       border-radius: 12px;
-      border: 1px solid #2a2a40;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16/9;
+    }
+
+    .project-preview-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .project-preview-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .preview-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 280px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    .preview-content {
+    .preview-overlay-content {
       text-align: center;
-      padding: 2rem;
-    }
-
-    .preview-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .preview-content h3 {
-      font-size: 1.2rem;
       color: #fff;
+    }
+
+    .preview-overlay-content .play-icon {
+      font-size: 3rem;
       margin-bottom: 0.5rem;
+      display: block;
     }
 
-    .preview-content > p {
-      color: #71717a;
-      font-size: 0.9rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .preview-features {
-      list-style: none;
-      text-align: left;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-    }
-
-    .preview-features li {
-      font-size: 0.85rem;
-      color: #a1a1aa;
-      padding: 0.3rem 0;
-    }
-
-    .btn-demo {
-      background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
-      color: #000;
+    .preview-overlay-content span {
+      font-size: 1.2rem;
       font-weight: 700;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
-      transition: all 0.3s;
+      color: #1DB954;
     }
 
-    .btn-demo:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+    .project-preview-link:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-preview-link:hover .preview-overlay {
+      opacity: 1;
     }
 
     /* Footer */
@@ -354,19 +355,15 @@
       </div>
       <div class="project-body">
         <div class="project-preview">
-          <div class="preview-content">
-            <div class="preview-icon">🔧</div>
-            <h3>Interactive Demo</h3>
-            <p>Streamlit 앱에서 직접 체험해보세요</p>
-            <ul class="preview-features">
-              <li>📊 13개 모델 성능 비교</li>
-              <li>🔬 Ablation Study 결과</li>
-              <li>🤖 LLM 진단 시뮬레이션</li>
-            </ul>
-            <a href="https://conveyorguard.streamlit.app" target="_blank" class="btn btn-demo">
-              🚀 Live Demo
-            </a>
-          </div>
+          <a href="https://conveyorguard.streamlit.app" target="_blank" class="project-preview-link">
+            <img src="assets/conveyorguard-preview.png" alt="ConveyorGuard Demo Preview">
+            <div class="preview-overlay">
+              <div class="preview-overlay-content">
+                <span class="play-icon">▶</span>
+                <span>Live Demo</span>
+              </div>
+            </div>
+          </a>
         </div>
         <div class="project-info">
           <h2>ConveyorGuard – 이송장치 열화 예측 AI</h2>
@@ -394,8 +391,7 @@
           </div>
 
           <div class="project-links">
-            <a href="https://conveyorguard.streamlit.app" target="_blank" class="btn btn-primary">Live Demo</a>
-            <a href="https://github.com/byoneself4023-bit/ConveyorGuard" target="_blank" class="btn btn-outline">GitHub</a>
+            <a href="https://github.com/byoneself4023-bit/ConveyorGuard" target="_blank" class="btn btn-primary">GitHub</a>
           </div>
         </div>
       </div>
