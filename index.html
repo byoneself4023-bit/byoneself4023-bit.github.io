@@ -200,6 +200,70 @@
       color: #1DB954;
     }
 
+    /* Project Preview (for Streamlit apps) */
+    .project-preview {
+      flex: 1;
+      min-width: 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16162a 100%);
+      border-radius: 12px;
+      border: 1px solid #2a2a40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .preview-content {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .preview-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .preview-content h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-content > p {
+      color: #71717a;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .preview-features {
+      list-style: none;
+      text-align: left;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-features li {
+      font-size: 0.85rem;
+      color: #a1a1aa;
+      padding: 0.3rem 0;
+    }
+
+    .btn-demo {
+      background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+      color: #000;
+      font-weight: 700;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+      transition: all 0.3s;
+    }
+
+    .btn-demo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -278,6 +342,60 @@
 
           <div class="project-links">
             <a href="https://github.com/byoneself4023-bit/Listify" target="_blank" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ConveyorGuard -->
+    <div class="project-card">
+      <div class="project-header">
+        <span class="role-badge">ML/DL · DATA SCIENCE</span>
+      </div>
+      <div class="project-body">
+        <div class="project-preview">
+          <div class="preview-content">
+            <div class="preview-icon">🔧</div>
+            <h3>Interactive Demo</h3>
+            <p>Streamlit 앱에서 직접 체험해보세요</p>
+            <ul class="preview-features">
+              <li>📊 13개 모델 성능 비교</li>
+              <li>🔬 Ablation Study 결과</li>
+              <li>🤖 LLM 진단 시뮬레이션</li>
+            </ul>
+            <a href="https://conveyorguard.streamlit.app" target="_blank" class="btn btn-demo">
+              🚀 Live Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h2>ConveyorGuard – 이송장치 열화 예측 AI</h2>
+          <p class="description">
+            반도체 제조 라인 이송장치의 열화 상태를 예측하는 예지보전 AI 시스템입니다.
+          </p>
+
+          <h3>Key Highlights</h3>
+          <ul>
+            <li>Ablation Study – 멀티모달 DL보다 피처 엔지니어링 ML이 우수함을 실험적으로 입증</li>
+            <li>13개 모델 종합 비교 – LightGBM 96.89% 정확도, 심각 Recall 98%</li>
+            <li>LangGraph 멀티 에이전트 – Analyzer→Diagnoser→Advisor→Reviewer 자동 진단</li>
+            <li>세션 기반 Split – 데이터 누수 방지로 실제 환경 일반화 성능 확보</li>
+          </ul>
+
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">LightGBM</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">CNN+Transformer</span>
+            <span class="tech-tag">Gemini 2.5 Flash</span>
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">Plotly</span>
+          </div>
+
+          <div class="project-links">
+            <a href="https://conveyorguard.streamlit.app" target="_blank" class="btn btn-primary">Live Demo</a>
+            <a href="https://github.com/byoneself4023-bit/ConveyorGuard" target="_blank" class="btn btn-outline">GitHub</a>
           </div>
         </div>
       </div>
