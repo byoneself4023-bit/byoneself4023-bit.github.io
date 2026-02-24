@@ -64,11 +64,41 @@
       margin-bottom: 2rem;
     }
 
+    /* Featured card (Aether) */
+    .project-card.featured {
+      border: 1px solid #3b2d6b;
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.08);
+    }
+
+    .featured-label {
+      display: inline-block;
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
     .project-header {
       padding: 1.5rem 2rem 0;
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+
+    .team-badge {
+      display: inline-block;
+      background: #27273a;
+      color: #a1a1aa;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      border: 1px solid #3f3f50;
+      letter-spacing: 0.3px;
     }
 
     .role-badge {
@@ -144,6 +174,11 @@
       margin-right: 0.5rem;
     }
 
+    /* Aether bullet color override */
+    .project-card.featured .project-info ul li::before {
+      color: #8b5cf6;
+    }
+
     /* Tech Tags */
     .tech-tags {
       display: flex;
@@ -187,6 +222,15 @@
 
     .btn-primary:hover {
       background: #1ed760;
+    }
+
+    .btn-aether {
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      color: #fff;
+    }
+
+    .btn-aether:hover {
+      background: linear-gradient(135deg, #6d28d9, #2563eb);
     }
 
     .btn-outline {
@@ -302,10 +346,117 @@
   <main>
     <h2 class="section-title" id="projects">Projects</h2>
 
+    <!-- Aether (Featured) -->
+    <div class="project-card featured">
+      <div class="project-header">
+        <span class="role-badge">FULL-STACK · AI/ML</span>
+        <span class="featured-label">Featured</span>
+      </div>
+      <div class="project-body">
+        <div class="project-video">
+          <iframe
+            src="https://www.youtube.com/embed/nyppHewEY4o"
+            title="Aether Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-info">
+          <h2>Aether – AI 투자 포트폴리오 최적화 플랫폼</h2>
+          <p class="description">
+            Markowitz 포트폴리오 이론 기반 투자 최적화 플랫폼. AI 분석과 RAG 챗봇을 통합한 마이크로서비스 아키텍처.
+          </p>
+
+          <h3>Key Highlights</h3>
+          <ul>
+            <li>투자 최적화 엔진 – Markowitz 이론 기반 효율적 프론티어, Ledoit-Wolf Shrinkage 공분산 추정</li>
+            <li>AI 포트폴리오 분석 – Gemini 기반 수익률·리스크·샤프 비율 자동 해석</li>
+            <li>RAG 챗봇 – ChromaDB 벡터스토어, 금융 지식 기반 질의응답</li>
+            <li>마이크로서비스 – Spring Boot + FastAPI + Next.js, Docker Compose 통합</li>
+            <li>품질 관리 – 511개 테스트, 64개 코드 리뷰, JWT Refresh Token 탈취 탐지</li>
+          </ul>
+
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Spring Security</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">Gemini</span>
+            <span class="tech-tag">ChromaDB</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/byoneself4023-bit/Aether" target="_blank" class="btn btn-aether">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SoundSpace -->
+    <div class="project-card">
+      <div class="project-header">
+        <span class="role-badge">ML · LLM · BACKEND</span>
+        <span class="team-badge">팀 프로젝트 (5인)</span>
+      </div>
+      <div class="project-body">
+        <div class="project-video">
+          <iframe
+            src="https://www.youtube.com/embed/eCoY1xw3qbk"
+            title="SoundSpace Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-info">
+          <h2>SoundSpace – AI 기반 개인화 음악 추천 플랫폼</h2>
+          <p class="description">
+            Spotify·Tidal·YouTube Music 등 멀티 플랫폼 음악 통합 관리 및 AI 기반 개인화 추천·자연어 검색을 제공하는 음악 큐레이션 플랫폼입니다.
+          </p>
+
+          <h3>Key Highlights</h3>
+          <ul>
+            <li>20개 모델 체계적 비교 – Baseline(4)→ML(5)→앙상블/텍스트(9)→RAG(2) 3단계 실험으로 NDCG 0.011→0.571 (50배 개선)</li>
+            <li>FAISS+MiniLM 멀티모달 앙상블 – KNN 오디오 스코어 + 텍스트 임베딩 결합, MMR로 NDCG −0.8%에 다양성 +20% 달성</li>
+            <li>Gemini RAG 추천 설명 – FAISS 유사곡 검색 + 오디오 피처 기반 프롬프트로 환각 없는 추천 이유 자연어 생성</li>
+            <li>마이크로서비스 아키텍처 – Spring Boot(메인 API) + FastAPI(AI/ML) + Node.js(크롤링) + Nginx, Docker Compose 오케스트레이션</li>
+            <li>멀티 플랫폼 OAuth 통합 – Spotify·Tidal·YouTube Music 3개 플랫폼 OAuth 2.0 인증, Apple Music/iTunes 연동</li>
+          </ul>
+
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">MariaDB</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">FAISS</span>
+            <span class="tech-tag">Gemini</span>
+            <span class="tech-tag">ChromaDB</span>
+            <span class="tech-tag">Spotify Web API</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Nginx</span>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/byoneself4023-bit/humamAppleTeamPreject001" target="_blank" class="btn btn-primary">Frontend</a>
+            <a href="https://github.com/byoneself4023-bit/FAST_API-PB" target="_blank" class="btn btn-outline">Backend (ML)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Listify -->
     <div class="project-card">
       <div class="project-header">
         <span class="role-badge">BACKEND · FRONTEND</span>
+        <span class="team-badge">팀 프로젝트 (5인)</span>
       </div>
       <div class="project-body">
         <div class="project-video">
@@ -324,21 +475,21 @@
 
           <h3>Key Highlights</h3>
           <ul>
-            <li>Spotify API 연동 – OAuth 2.0 기반 음악 검색, 오디오 특성 조회 및 장르 매핑</li>
+            <li>Spotify API 연동 – Client Credentials Flow 기반 음악 검색, 오디오 특성 조회 및 장르 매핑</li>
             <li>JWT 인증 + RBAC – bcrypt 해싱, 역할 기반 접근 제어 미들웨어</li>
             <li>사용자 통계 시각화 – Recharts 파이/바/레이더 차트로 음악 취향 분석</li>
-            <li>Docker Compose 배포 – 멀티스테이지 빌드, Health Check, Nginx 서빙</li>
+            <li>Docker Compose 배포 – 프론트엔드 멀티스테이지 빌드, Nginx 리버스 프록시</li>
           </ul>
 
           <h3>Tech Stack</h3>
           <div class="tech-tags">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Tailwind CSS</span>
             <span class="tech-tag">Flask</span>
             <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Spotify Web API</span>
             <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Spotify API</span>
+            <span class="tech-tag">Nginx</span>
           </div>
 
           <div class="project-links">
@@ -381,12 +532,13 @@
 
           <h3>Tech Stack</h3>
           <div class="tech-tags">
-            <span class="tech-tag">LightGBM</span>
             <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">scikit-learn</span>
             <span class="tech-tag">CNN+Transformer</span>
             <span class="tech-tag">LangGraph</span>
-            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">Gemini</span>
+            <span class="tech-tag">FAISS</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Docker</span>
           </div>
 
           <div class="project-links">
