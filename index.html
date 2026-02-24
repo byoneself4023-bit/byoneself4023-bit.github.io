@@ -112,6 +112,25 @@
       letter-spacing: 0.5px;
     }
 
+    .award-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .project-date {
+      margin-left: auto;
+      color: #71717a;
+      font-size: 0.8rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
     .project-body {
       display: flex;
       gap: 2rem;
@@ -337,7 +356,7 @@
 <body>
 
   <header>
-    <h1>PORTFOLIO</h1>
+    <h1>KIM KIYEOL · BACKEND & AI/ML</h1>
     <nav>
       <a href="#projects">Projects</a>
       <a href="https://github.com/byoneself4023-bit" target="_blank">GitHub</a>
@@ -352,6 +371,7 @@
       <div class="project-header">
         <span class="role-badge">FULL-STACK · AI/ML</span>
         <span class="team-badge">개인 프로젝트</span>
+        <span class="project-date">2026.02</span>
       </div>
       <div class="project-body">
         <div class="project-video">
@@ -401,8 +421,9 @@
     <!-- SoundSpace -->
     <div class="project-card">
       <div class="project-header">
-        <span class="role-badge">ML · LLM · BACKEND</span>
+        <span class="role-badge">ML · LLM</span>
         <span class="team-badge">팀 프로젝트 (5인)</span>
+        <span class="project-date">2026.01 – 2026.02</span>
       </div>
       <div class="project-body">
         <div class="project-video">
@@ -416,16 +437,15 @@
         <div class="project-info">
           <h2>SoundSpace – AI 기반 개인화 음악 추천 플랫폼</h2>
           <p class="description">
-            Spotify·Tidal·YouTube Music 등 멀티 플랫폼 음악 통합 관리 및 AI 기반 개인화 추천·자연어 검색을 제공하는 음악 큐레이션 플랫폼입니다.
+            Spotify·Tidal·YouTube Music 멀티 플랫폼 음악 통합 관리 및 AI 추천 플랫폼. 5인 팀에서 ML 추천 모델링 및 LLM 파이프라인 독립 구현.
           </p>
 
           <h3>Key Highlights</h3>
           <ul>
-            <li>20개 모델 비교 실험 – Baseline→ML→앙상블→RAG 3단계, NDCG 0.011→0.571 (50배)</li>
-            <li>FAISS+MiniLM 앙상블 – 오디오 KNN + 텍스트 임베딩 결합, MMR 다양성 제어</li>
-            <li>Gemini RAG – 유사곡 검색 기반 환각 없는 추천 이유 생성</li>
-            <li>MSA – Spring Boot + FastAPI + Node.js + Nginx, Docker Compose</li>
-            <li>멀티 플랫폼 OAuth – Spotify·Tidal·YouTube Music 인증 통합</li>
+            <li>20개 추천 모델 비교 실험 설계 – Baseline(4)→ML(5)→앙상블(9)→RAG(2) 3단계 체계적 검증, NDCG@50 0.011→0.571 (약 50배)</li>
+            <li>FAISS+MiniLM 멀티모달 앙상블 – KNN(오디오) + SBERT(텍스트) 스코어 결합, MMR 적용 시 NDCG 하락 −0.8% (KNN 단독 −24%)</li>
+            <li>임베딩 모델·텍스트 구성 최적화 – 3모델(22M~335M)×3형식 비교, 파라미터 15배 증가에도 성능 하락 → 소형 모델(MiniLM) 선택</li>
+            <li>RAG 추천 설명 파이프라인 – FAISS 유사곡 Top-3 검색 + Gemini 2.5 Flash, 수치 인용 0개→24개로 LLM 환각 제거</li>
           </ul>
 
           <h3>Tech Stack</h3>
@@ -453,11 +473,66 @@
       </div>
     </div>
 
+    <!-- SANZERO -->
+    <div class="project-card">
+      <div class="project-header">
+        <span class="role-badge">FRONTEND · DEVOPS · QA</span>
+        <span class="team-badge">팀 프로젝트 (4인)</span>
+        <span class="award-badge">🏆 Google AI 융합 우수상</span>
+        <span class="project-date">2025.09 – 2025.12</span>
+      </div>
+      <div class="project-body">
+        <div class="project-video">
+          <iframe
+            src="https://www.youtube.com/embed/AwEpd6Rsznc"
+            title="SANZERO Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-info">
+          <h2>산재로(SANZERO) – 산재 피해자 권익 지원 AI 플랫폼</h2>
+          <p class="description">
+            장해등급 예측(DNN ±0.8등급 오차), 판례 검색(27K건, 2.4초), 보상금 계산을 통합한 산재 피해자 지원 플랫폼. 프론트엔드 전체 및 DevOps 담당.
+          </p>
+
+          <h3>Key Highlights</h3>
+          <ul>
+            <li>프론트엔드 설계·구현 – HTMX + Jinja2 SSR, 17개 템플릿·3,000줄+ 코드, Figma→구현 전 과정 주도</li>
+            <li>보안 체계 설계 – JWT 인증 + CSRF/XSS 방어 + Rate Limiting 구현, 50회 연속 실행 오류 0건</li>
+            <li>보상금 계산 엔진 – 산재보험법 기반 장해·휴업·간병급여 자동 산정, 법령 일치율 100%</li>
+            <li>테스트·배포 – 140개+ TC + Puppeteer E2E 자동화, Docker Compose + Nginx + AWS EC2 운영</li>
+          </ul>
+
+          <h3>Tech Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Jinja2</span>
+            <span class="tech-tag">HTMX</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">SBERT</span>
+            <span class="tech-tag">OpenAI</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Nginx</span>
+            <span class="tech-tag">AWS EC2</span>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/SANZERO-Ajou" target="_blank" class="btn btn-primary">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Listify -->
     <div class="project-card">
       <div class="project-header">
         <span class="role-badge">BACKEND · FRONTEND</span>
         <span class="team-badge">팀 프로젝트 (5인)</span>
+        <span class="project-date">2025.12</span>
       </div>
       <div class="project-body">
         <div class="project-video">
@@ -505,6 +580,7 @@
       <div class="project-header">
         <span class="role-badge">ML/DL · DATA SCIENCE</span>
         <span class="team-badge">개인 프로젝트</span>
+        <span class="project-date">2026.01</span>
       </div>
       <div class="project-body">
         <div class="project-preview">
