@@ -128,7 +128,6 @@
       color: #71717a;
       font-size: 0.8rem;
       font-weight: 500;
-      white-space: nowrap;
       text-align: right;
     }
 
@@ -391,11 +390,11 @@
 
           <h3>Key Highlights</h3>
           <ul>
-            <li>투자 최적화 엔진 – Markowitz 이론 기반 효율적 프론티어, Ledoit-Wolf Shrinkage 공분산 추정</li>
-            <li>AI 포트폴리오 분석 – Gemini 기반 수익률·리스크·샤프 비율 자동 해석</li>
-            <li>RAG 챗봇 – ChromaDB 벡터스토어, 금융 지식 기반 질의응답</li>
-            <li>마이크로서비스 – Spring Boot + FastAPI + Next.js, Docker Compose 통합</li>
-            <li>품질 관리 – 511개 테스트, 64개 코드 리뷰, JWT Refresh Token 탈취 탐지</li>
+            <li>투자 최적화 엔진 – Ledoit-Wolf Shrinkage + Monte Carlo VaR 10,000회, 3종 전략 자동 비교</li>
+            <li>AI 분석 + 보안 – 4종 분석 프롬프트, 인젝션 방어 11패턴 + Hallucination 검증</li>
+            <li>RAG 챗봇 – ChromaDB 4개 금융 지식 문서, 2단계 청크 분할, Top-5 검색</li>
+            <li>마이크로서비스 – 6개 컨테이너, 35개 API 엔드포인트, 전체 헬스체크</li>
+            <li>품질 관리 – 511개 테스트, 코드 리뷰 64건(Critical 18), 통합 테스트 10/10 통과</li>
           </ul>
 
           <h3>Tech Stack</h3>
@@ -443,10 +442,10 @@
 
           <h3>Key Highlights</h3>
           <ul>
-            <li>20개 추천 모델 비교 실험 설계 – Baseline(4)→ML(5)→앙상블(9)→RAG(2) 3단계 체계적 검증, NDCG@50 0.011→0.571 (약 50배)</li>
-            <li>FAISS+MiniLM 멀티모달 앙상블 – KNN(오디오) + SBERT(텍스트) 스코어 결합, MMR 적용 시 NDCG 하락 −0.8% (KNN 단독 −24%)</li>
-            <li>임베딩 모델·텍스트 구성 최적화 – 3모델(22M~335M)×3형식 비교, 파라미터 15배 증가에도 성능 하락 → 소형 모델(MiniLM) 선택</li>
-            <li>RAG 추천 설명 파이프라인 – FAISS 유사곡 Top-3 검색 + Gemini 2.5 Flash, 수치 인용 0개→24개로 LLM 환각 제거</li>
+            <li>20개 모델 3단계 비교 실험 – NDCG@50 0.011→0.571, Baseline 대비 약 50배 개선</li>
+            <li>멀티모달 앙상블 추천 – MMR 적용 시 NDCG −0.8% (KNN 단독 −24%)</li>
+            <li>임베딩 모델 최적화 – 소형 모델(22M)이 대형(335M) 대비 성능 우위 검증</li>
+            <li>RAG 추천 설명 – FAISS + Gemini 2.5 Flash, 수치 인용 0→24개 환각 제거</li>
           </ul>
 
           <h3>Tech Stack</h3>
@@ -552,9 +551,9 @@
 
           <h3>Key Highlights</h3>
           <ul>
-            <li>Spotify API 연동 – Client Credentials Flow 기반 음악 검색, 오디오 특성 조회 및 장르 매핑</li>
-            <li>JWT 인증 + RBAC – bcrypt 해싱, 역할 기반 접근 제어 미들웨어</li>
-            <li>사용자 통계 시각화 – Recharts 파이/바/레이더 차트로 음악 취향 분석</li>
+            <li>Spotify API 연동 – 8,000만+ 곡 카탈로그 검색, 5가지 오디오 특성 분석, 15→7 장르 매핑</li>
+            <li>JWT 인증 + RBAC – 28개 API 중 13개 보호, 2단계 역할 기반 접근 제어</li>
+            <li>사용자 통계 시각화 – Recharts 3종 차트(Pie/Bar/Radar)로 음악 취향 분석</li>
             <li>Docker Compose 배포 – 프론트엔드 멀티스테이지 빌드, Nginx 리버스 프록시</li>
           </ul>
 
@@ -603,10 +602,10 @@
 
           <h3>Key Highlights</h3>
           <ul>
-            <li>멀티모달 파이프라인 – 8채널 센서 + 60×80 열화상 동시 처리 분석 시스템 구축</li>
-            <li>열화 예측 모델 – LightGBM 기반 4단계 분류, 96.89% 정확도 / 심각 Recall 98%</li>
-            <li>LLM 멀티 에이전트 – LangGraph 4단계 워크플로우로 자동 진단 리포트 생성</li>
-            <li>Ablation Study – CNN+Transformer vs 피처 엔지니어링 ML 비교 실험 수행</li>
+            <li>Ablation Study – LightGBM이 CNN+Transformer 대비 +3.65%p, 학습 807배 빠름</li>
+            <li>열화 예측 – 4단계 분류 96.89%, 심각 Recall 98% (88건 중 86건 탐지)</li>
+            <li>멀티모달 검증 – 센서+열화상 Ablation, 센서 지배적 예측 변수 검증 (+0.52%p)</li>
+            <li>LLM 진단 리포트 – LangGraph 4단계 자동 진단, 리포트 생성 91.5초</li>
           </ul>
 
           <h3>Tech Stack</h3>
